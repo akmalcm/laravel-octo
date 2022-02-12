@@ -4,27 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
-    protected $table = 'rating';
+return new class extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create($this->table, function (Blueprint $table) {
             $this->down();
-            
+
             $table->id();
             $table->bigInteger('movie_id')->unsigned()->index();
             $table->integer('rating');
             $table->text('description');
-            
+
             $table->foreign('movie_id')
-            ->references('id')
-            ->on('movie')->onDelete('cascade');
+                ->references('id')
+                ->on('movie')->onDelete('cascade');
         });
     }
 
@@ -33,8 +30,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists($this->table);
     }
 };
