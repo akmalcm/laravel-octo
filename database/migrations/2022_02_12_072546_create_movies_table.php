@@ -15,11 +15,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
-            $table->id('Movie_ID');
-            $table->string('Title');
+            $table->id();
+            $table->string('title');
             $table->date('release_date');
             $table->integer('length');
-            $table->text('Description');
+            $table->text('description');
             $table->string('mpaa_rating');
         });
     }
