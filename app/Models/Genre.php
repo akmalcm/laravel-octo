@@ -10,7 +10,8 @@ class Genre extends Model
     use HasFactory;
     
     protected $table = 'genre';
-
+    public $timestamps = false;
+    
     protected $fillable = ['title'];
 
     public function movies() {

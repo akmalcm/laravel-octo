@@ -10,7 +10,8 @@ class Director extends Model
     use HasFactory;
 
     protected $table = 'director';
-    
+    public $timestamps = false;
+
     protected $fillable = ['name'];
 
     public function movies() {

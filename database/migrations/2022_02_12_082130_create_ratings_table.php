@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
+    protected $table = 'rating';
     /**
      * Run the migrations.
      *
@@ -16,6 +17,7 @@ return new class extends Migration {
 
             $table->id();
             $table->bigInteger('movie_id')->unsigned()->index();
+            $table->string('username');
             $table->integer('rating');
             $table->text('description');
 

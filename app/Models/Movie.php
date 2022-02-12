@@ -10,6 +10,7 @@ class Movie extends Model
     use HasFactory;
 
     protected $table = 'movie';
+    public $timestamps = false;
 
     protected $fillable = ['title', 'release_date', 'length', 'description'];
 
@@ -55,7 +56,7 @@ class Movie extends Model
             'movies_theaters',
             'movie_id',
             'theater_id'
-        );
+        )->withPivot('room_no', 'start_time', 'end_time');
     }
 
     public function ratings(){

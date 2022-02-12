@@ -10,6 +10,7 @@ class Performer extends Model
     use HasFactory;
 
     protected $table = 'performer';
+    public $timestamps = false;
 
     protected $fillable = ['name'];
 

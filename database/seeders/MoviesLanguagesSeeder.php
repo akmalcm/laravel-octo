@@ -6,6 +6,7 @@ use App\Models\Language;
 use App\Models\Movie;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MoviesLanguagesSeeder extends Seeder
 {
@@ -16,6 +17,8 @@ class MoviesLanguagesSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('movies_languages')->truncate();
+
         $movies = Movie::all();
         $languages = Language::all();
 

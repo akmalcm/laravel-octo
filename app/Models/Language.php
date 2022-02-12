@@ -10,6 +10,7 @@ class Language extends Model
     use HasFactory;
 
     protected $table = 'language';
+    public $timestamps = false;
 
     protected $fillable = ['title'];
 

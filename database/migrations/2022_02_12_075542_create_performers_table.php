@@ -4,16 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
+    protected $table = 'performer';
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up() {
+    public function up()
+    {
         Schema::create($this->table, function (Blueprint $table) {
             $table->id();
-            $table->string('performer_name');
+            $table->string('name');
         });
     }
 
@@ -22,7 +25,8 @@ return new class extends Migration {
      *
      * @return void
      */
-    public function down() {
-        Schema::dropIfExists($this->table);
+    public function down()
+    {
+        Schema::dropIfExists('performer');
     }
 };

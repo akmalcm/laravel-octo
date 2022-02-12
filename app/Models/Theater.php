@@ -10,6 +10,7 @@ class Theater extends Model
     use HasFactory;
 
     protected $table = 'theater';
+    public $timestamps = false;
 
     protected $fillable = ['name'];
 
@@ -19,6 +20,6 @@ class Theater extends Model
             'movies_theaters',
             'theater_id',
             'movie_id'
-        );
+        )->withPivot('room_no', 'start_time', 'end_time');
     }
 }

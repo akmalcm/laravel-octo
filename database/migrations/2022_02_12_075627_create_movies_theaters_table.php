@@ -13,9 +13,11 @@ return new class extends Migration {
     public function up() {
         Schema::create('movies_theaters', function (Blueprint $table) {
             $this->down();
-            $table->engine = "InnoDB";
-            $table->bigInteger('movie_id')->unsigned()->primary();
-            $table->bigInteger('theater_id')->unsigned()->primary();
+
+            $table->bigInteger('movie_id')->unsigned();
+            $table->bigInteger('theater_id')->unsigned();
+            $table->primary(['movie_id','theater_id']);
+
             $table->string('room_no');
             $table->dateTime('start_time');
             $table->dateTime('end_time');

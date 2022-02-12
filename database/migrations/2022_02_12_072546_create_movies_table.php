@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $table = 'movie';
     /**
      * Run the migrations.
      *
@@ -14,11 +15,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
+            $table->id('Movie_ID');
+            $table->string('Title');
             $table->date('release_date');
             $table->integer('length');
-            $table->text('description');
+            $table->text('Description');
             $table->string('mpaa_rating');
         });
     }

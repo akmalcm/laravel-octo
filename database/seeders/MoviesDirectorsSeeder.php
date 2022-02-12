@@ -6,6 +6,7 @@ use App\Models\Director;
 use App\Models\Movie;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MoviesDirectorsSeeder extends Seeder {
     /**
@@ -14,6 +15,8 @@ class MoviesDirectorsSeeder extends Seeder {
      * @return void
      */
     public function run() {
+        DB::table('movies_directors')->truncate();
+        
         $movies = Movie::all();
         $directors = Director::all();
 

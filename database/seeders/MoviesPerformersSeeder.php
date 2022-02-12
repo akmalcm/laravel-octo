@@ -6,6 +6,7 @@ use App\Models\Movie;
 use App\Models\Performer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MoviesPerformersSeeder extends Seeder
 {
@@ -16,6 +17,8 @@ class MoviesPerformersSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('movies_performers')->truncate();
+
         $movies = Movie::all();
         $performers = Performer::all();
 

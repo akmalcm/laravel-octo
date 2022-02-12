@@ -27,9 +27,9 @@ Route::group(array('middleware' => ['custom_auth']), function ()
 });
 
 Route::get('genre', [ApiController::class, 'genre']);
-Route::get('timeslot', 'ApiController@timeslot');
-Route::get('specific_movie_theater', 'ApiController@specificMovieTheater');
-Route::get('search_performer', 'ApiController@searchPerformer');
-Route::post('give_rating', 'ApiController@giveRating');
-Route::get('new_movies', 'ApiController@newMovie');
-Route::post('add_movie', 'ApiController@addMovie');
+Route::get('timeslot', [ApiController::class, 'timeslot']);
+Route::get('specific_movie_theater', [ApiController::class, 'specificMovieTheater']);
+Route::get('search_performer', [ApiController::class, 'searchPerformer']);
+Route::post('give_rating', [ApiController::class, 'giveRating']);
+Route::get('new_movies', [ApiController::class, 'newMovies']);
+Route::post('add_movie', [ApiController::class, 'addMovie']);
