@@ -14,8 +14,8 @@ return new class extends Migration {
         Schema::create('movies_directors', function (Blueprint $table) {
             $this->down();
 
-            $table->bigInteger('movie_id')->unsigned()->index();
-            $table->bigInteger('director_id')->unsigned()->index();
+            $table->bigInteger('movie_id')->unsigned()->primary();
+            $table->bigInteger('director_id')->unsigned()->primary();
 
             $table->foreign('movie_id')
                 ->references('id')
