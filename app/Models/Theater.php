@@ -9,6 +9,8 @@ class Theater extends Model
 {
     use HasFactory;
 
+    protected $table = 'theater';
+
     protected $fillable = ['name'];
 
     public function movies() {

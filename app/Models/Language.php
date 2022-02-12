@@ -9,6 +9,8 @@ class Language extends Model
 {
     use HasFactory;
 
+    protected $table = 'language';
+
     protected $fillable = ['title'];
 
     public function movies() {

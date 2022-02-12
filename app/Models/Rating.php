@@ -9,6 +9,8 @@ class Rating extends Model
 {
     use HasFactory;
 
+    protected $table = 'rating';
+
     protected $fillable = ['movie_id', 'username', 'rating', 'description'];
 
     public function movie() {
