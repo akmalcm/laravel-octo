@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TokenController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,6 +26,10 @@ Route::group(array('middleware' => ['custom_auth']), function ()
     Route::post('/token/topup', [TokenController::class, 'store']);
 });
 
-
-
-
+Route::get('genre', [ApiController::class, 'genre']);
+Route::get('timeslot', 'ApiController@timeslot');
+Route::get('specific_movie_theater', 'ApiController@specificMovieTheater');
+Route::get('search_performer', 'ApiController@searchPerformer');
+Route::post('give_rating', 'ApiController@giveRating');
+Route::get('new_movies', 'ApiController@newMovie');
+Route::post('add_movie', 'ApiController@addMovie');
