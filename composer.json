@@ -9,6 +9,7 @@
         "fruitcake/laravel-cors": "dev-develop",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^9.0",
+        "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.5|dev-develop"
     },
     "require-dev": {
@@ -45,7 +46,7 @@
             "@php artisan key:generate --ansi"
         ],
         "test" : [
-            "vendor/bin/phpunit"
+            "vendor/bin/phpunit --coverage-html tests/coverage"
         ]
     },
     "extra": {

@@ -12,7 +12,7 @@ class Movie extends Model
     protected $table = 'movie';
     public $timestamps = false;
 
-    protected $fillable = ['title', 'release_date', 'length', 'description'];
+    protected $fillable = ['title', 'release_date', 'length', 'description', 'mpaa_rating'];
 
     public function genres() {
         return $this->belongsToMany(

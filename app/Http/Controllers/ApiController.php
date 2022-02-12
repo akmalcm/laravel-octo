@@ -12,6 +12,7 @@ use App\Models\Theater;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use function PHPSTORM_META\type;
 
 class ApiController extends Controller {
 
@@ -40,7 +41,7 @@ class ApiController extends Controller {
     public function timeslot(Request $request) {
 
         if ($request->theater_name && $request->time_start && $request->time_end) {
-            $theater = Theater::where('name', $request->theater_name)->firstOrFail();
+            $theater = Theater::where('name', $request->theater_name)->first();
             $data = array();
 
             foreach ($theater->movies()->wherePivot('start_time', '>=', $request->time_start)->wherePivot('end_time', '<=', $request->time_end)->get() as $movie) {
@@ -65,7 +66,7 @@ class ApiController extends Controller {
     public function specificMovieTheater(Request $request) {
 
         if ($request->theater_name && $request->d_date) {
-            $theater = Theater::where('name', $request->theater_name)->firstOrFail();
+            $theater = Theater::where('name', $request->theater_name)->first();
             $data = array();
 
             foreach ($theater->movies()->wherePivot('start_time', 'like', '%' . $request->d_date . '%')->get() as $movie) {
@@ -90,7 +91,7 @@ class ApiController extends Controller {
     public function searchPerformer(Request $request) {
 
         if ($request->performer_name) {
-            $performer = Performer::where('name', $request->performer_name)->firstOrFail();
+            $performer = Performer::where('name', $request->performer_name)->first();
             $data = array();
 
             foreach ($performer->movies as $movie) {
@@ -117,9 +118,7 @@ class ApiController extends Controller {
 
     public function giveRating(Request $request) {
         if ($request->movie_title && $request->username && $request->rating && $request->r_description) {
-
-            $movie = Movie::where('title', $request->title)->firstOrFail();
-
+            $movie = Movie::where('title', $request->movie_title)->firstOrFail();
             $rating = Rating::create(['movie_id' => $movie->id, 'username' => $request->username, 'rating' => $request->rating, 'description' => $request->r_description]);
 
             return response(['message' => 'Successfully added review for ' . $request->movie_title . ' by user: ' . $request->username, 'success' => true], 201);
@@ -165,6 +164,19 @@ class ApiController extends Controller {
             $performers = $request->input('performer');
             $languages = $request->input('language');
 
+            if(gettype($genres) == 'string'){
+                $genres = array($genres);
+            }
+            if(gettype($directors) == 'string'){
+                $directors = array($directors);
+            }
+            if(gettype($performers) == 'string'){
+                $performers = array($performers);
+            }
+            if(gettype($languages) == 'string'){
+                $languages = array($languages);
+            }
+
             $movie = Movie::create([
                 'title' => $request->title,
                 'release_date' => $request->release,
@@ -173,28 +185,46 @@ class ApiController extends Controller {
                 'mpaa_rating' => $request->mpaa_rating
             ]);
 
-            foreach($genres as $genre){
-                $genre = Genre::create([
-                    'title' => $genre,
-                ]);
+            foreach($genres as $key => $val){
+                $genres[$key] = Genre::where(DB::raw('UPPER(title)'), strtoupper($val))->first();
+                if(!$genres[$key]){
+                    $genres[$key] = Genre::create([
+                        'title' => $val,
+                    ]);
+                }
+
+                $genres[$key] = $genres[$key]->id;
             }
 
-            foreach($directors as $director){
-                $director = Director::create([
-                    'name' => $director,
-                ]);
+            foreach($directors as $key => $val){
+                $directors[$key] = Director::where(DB::raw('UPPER(name)'), strtoupper($val))->first();
+                if(!$directors[$key]){
+                    $directors[$key] = Director::create([
+                        'name' => $val,
+                    ]);
+                }
+
+                $directors[$key] = $directors[$key]->id;
             }
 
-            foreach($performers as $performer){
-                $performer = Performer::create([
-                    'name' => $performer,
-                ]);
+            foreach($performers as $key => $val){
+                $performers[$key] = Performer::where(DB::raw('UPPER(name)'), strtoupper($val))->first();
+                if(!$performers[$key]){
+                    $performers[$key] = Performer::create([
+                        'name' => $val,
+                    ]);
+                }
+                $performers[$key] = $performers[$key]->id;
             }
 
-            foreach($languages as $language){
-                $language = Language::create([
-                    'title' => $language,
-                ]);
+            foreach($languages as $key => $val){
+                $languages[$key] = Language::where(DB::raw('UPPER(title)'), strtoupper($val))->first();
+                if(!$languages[$key]){
+                    $languages[$key] = Language::create([
+                        'title' => $val,
+                    ]);
+                }
+                $languages[$key] = $languages[$key]->id;
             }
 
             $movie->genres()->attach($genres);
