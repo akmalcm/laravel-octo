@@ -34,7 +34,7 @@ class ApiController extends Controller {
                 );
             }
 
-            return response()->json($data, 200);
+            return response()->json(compact('data'), 200);
         }
     }
 
@@ -59,7 +59,7 @@ class ApiController extends Controller {
                 );
             }
 
-            return response()->json($data, 200);
+            return response()->json(compact('data'), 200);
         }
     }
 
@@ -84,7 +84,7 @@ class ApiController extends Controller {
                 );
             }
 
-            return response()->json($data, 200);
+            return response()->json(compact('data'), 200);
         }
     }
 
@@ -99,7 +99,7 @@ class ApiController extends Controller {
                 foreach ($movie->ratings as $rating) {
                     $overall_rating += $rating->rating;
                 }
-                $overall_rating = $overall_rating / sizeof($movie->ratings);
+                $overall_rating = number_format($overall_rating / sizeof($movie->ratings), 1);
 
                 array_push(
                     $data,
@@ -112,23 +112,28 @@ class ApiController extends Controller {
                 );
             }
 
-            return response()->json($data, 200);
+            return response()->json(compact('data'), 200);
         }
     }
 
     public function giveRating(Request $request) {
+
         if ($request->movie_title && $request->username && $request->rating && $request->r_description) {
             $movie = Movie::where('title', $request->movie_title)->firstOrFail();
             $rating = Rating::create(['movie_id' => $movie->id, 'username' => $request->username, 'rating' => $request->rating, 'description' => $request->r_description]);
 
-            return response(['message' => 'Successfully added review for ' . $request->movie_title . ' by user: ' . $request->username, 'success' => true], 201);
+            if ($rating)
+                return response(['message' => 'Successfully added review for ' . $request->movie_title . ' by user: ' . $request->username, 'success' => true], 201);
+            else
+                return response(['message' => 'Failed adding review for ' . $request->movie_title . ' by user: ' . $request->username, 'success' => false], 500);
         }
+        return response(['message' => 'Error input', 'success' => false], 500);
     }
 
     public function newMovies(Request $request) {
         if ($request->r_date) {
 
-            $movies = Movie::where('release_date', $request->r_date)->get();
+            $movies = Movie::where('release_date', '<=', $request->r_date)->orderBy('release_date', 'desc')->get();
             $data = [];
 
             foreach ($movies as $movie) {
@@ -137,7 +142,9 @@ class ApiController extends Controller {
                 foreach ($movie->ratings as $rating) {
                     $overall_rating += $rating->rating;
                 }
-                $overall_rating = $overall_rating / sizeof($movie->ratings);
+                
+                if (sizeof($movie->ratings) != 0)
+                    $overall_rating = number_format($overall_rating / sizeof($movie->ratings), 1);
 
                 array_push(
                     $data,
@@ -150,7 +157,7 @@ class ApiController extends Controller {
                 );
             }
 
-            return response()->json($data);
+            return response()->json(compact('data'));
         }
     }
 
@@ -164,16 +171,16 @@ class ApiController extends Controller {
             $performers = $request->input('performer');
             $languages = $request->input('language');
 
-            if(gettype($genres) == 'string'){
+            if (gettype($genres) == 'string') {
                 $genres = array($genres);
             }
-            if(gettype($directors) == 'string'){
+            if (gettype($directors) == 'string') {
                 $directors = array($directors);
             }
-            if(gettype($performers) == 'string'){
+            if (gettype($performers) == 'string') {
                 $performers = array($performers);
             }
-            if(gettype($languages) == 'string'){
+            if (gettype($languages) == 'string') {
                 $languages = array($languages);
             }
 
@@ -185,9 +192,9 @@ class ApiController extends Controller {
                 'mpaa_rating' => $request->mpaa_rating
             ]);
 
-            foreach($genres as $key => $val){
+            foreach ($genres as $key => $val) {
                 $genres[$key] = Genre::where(DB::raw('UPPER(title)'), strtoupper($val))->first();
-                if(!$genres[$key]){
+                if (!$genres[$key]) {
                     $genres[$key] = Genre::create([
                         'title' => $val,
                     ]);
@@ -196,9 +203,9 @@ class ApiController extends Controller {
                 $genres[$key] = $genres[$key]->id;
             }
 
-            foreach($directors as $key => $val){
+            foreach ($directors as $key => $val) {
                 $directors[$key] = Director::where(DB::raw('UPPER(name)'), strtoupper($val))->first();
-                if(!$directors[$key]){
+                if (!$directors[$key]) {
                     $directors[$key] = Director::create([
                         'name' => $val,
                     ]);
@@ -207,9 +214,9 @@ class ApiController extends Controller {
                 $directors[$key] = $directors[$key]->id;
             }
 
-            foreach($performers as $key => $val){
+            foreach ($performers as $key => $val) {
                 $performers[$key] = Performer::where(DB::raw('UPPER(name)'), strtoupper($val))->first();
-                if(!$performers[$key]){
+                if (!$performers[$key]) {
                     $performers[$key] = Performer::create([
                         'name' => $val,
                     ]);
@@ -217,9 +224,9 @@ class ApiController extends Controller {
                 $performers[$key] = $performers[$key]->id;
             }
 
-            foreach($languages as $key => $val){
+            foreach ($languages as $key => $val) {
                 $languages[$key] = Language::where(DB::raw('UPPER(title)'), strtoupper($val))->first();
-                if(!$languages[$key]){
+                if (!$languages[$key]) {
                     $languages[$key] = Language::create([
                         'title' => $val,
                     ]);
