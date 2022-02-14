@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "c390499e-80f7-4268-9f14-094ba40a4e76",
+		"_postman_id": "5b9a729f-78c3-4c74-b1f5-31b176167ad0",
 		"name": "Movie API",
-		"description": "# Introduction\nThis API can be used to retrieve and modify data in a database containing information about movies shown in cinemas.\n\n# Authentication\nNo authentication is needed to use this API.\n\n# Rate limit\nThere is no limit to the number of requests that could be made to this API.",
+		"description": "\\# Introduction\\\\nThis API can be used to retrieve and modify data in a database containing information about movies shown in cinemas.\\\\n\\\\n# Authentication\\\\nNo authentication is needed to use this API.\\\\n\\\\n# Rate limit\\\\nThere is no limit to the number of requests that could be made to this API.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/genre?genre=comedy",
+					"raw": "http://127.0.0.1:8000/api/genre?genre=comedy",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,6 +22,7 @@
 					],
 					"port": "8000",
 					"path": [
+						"api",
 						"genre"
 					],
 					"query": [
@@ -41,7 +42,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/genre?genre=comedy",
+							"raw": "http://127.0.0.1:8000/api/genre?genre=comedy",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -51,6 +52,7 @@
 							],
 							"port": "8000",
 							"path": [
+								"api",
 								"genre"
 							],
 							"query": [
@@ -67,32 +69,48 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
-							"value": "Wed, 08 Apr 2020 02:08:05 GMT"
+							"key": "Host",
+							"value": "127.0.0.1:8000"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.7.7"
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:01:01 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:01:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
+							"key": "X-RateLimit-Limit",
+							"value": "60"
 						},
 						{
-							"key": "Content-Length",
-							"value": "1305"
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
 						},
 						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 2,\n            \"Title\": \"Parasite\",\n            \"Genre\": \"comedy\",\n            \"Description\": \"A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks. But their easy life gets complicated when their deception is threatened with exposure.\"\n        },\n        {\n            \"Movie_ID\": 3,\n            \"Title\": \"The Favourite\",\n            \"Genre\": \"comedy\",\n            \"Description\": \"In early 18th century England, a frail Queen Anne occupies the throne and her close friend, Lady Sarah, governs the country in her stead. When a new servant, Abigail, arrives, her charm endears her to Sarah.\"\n        },\n        {\n            \"Movie_ID\": 4,\n            \"Title\": \"The Farewell I\",\n            \"Genre\": \"comedy\",\n            \"Description\": \"A Chinese family discovers their grandmother has only a short while left to live and decide to keep her in the dark, scheduling a wedding to gather before she dies.\"\n        },\n        {\n            \"Movie_ID\": 11,\n            \"Title\": \"Marriage Story\",\n            \"Genre\": \"comedy\",\n            \"Description\": \"Noah Baumbach's incisive and compassionate look at a marriage breaking up and a family staying together.\"\n        },\n        {\n            \"Movie_ID\": 12,\n            \"Title\": \"Booksmart\",\n            \"Genre\": \"comedy\",\n            \"Description\": \"On the eve of their high school graduation, two academic superstars and best friends realize they should have worked less and played more. Determined not to fall short of their peers, the girls try to cram four years of fun into one night.\"\n        }\n    ]\n}"
+					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 1,\n            \"Title\": \"Parasite\",\n            \"Genre\": \"Comedy\",\n            \"Description\": \"Molestiae ut quos voluptatum omnis corporis et.\"\n        },\n        {\n            \"Movie_ID\": 4,\n            \"Title\": \"Marriage Story\",\n            \"Genre\": \"Comedy\",\n            \"Description\": \"Omnis laudantium sed ut quaerat nulla quam nesciunt.\"\n        },\n        {\n            \"Movie_ID\": 5,\n            \"Title\": \"Booksmart\",\n            \"Genre\": \"Comedy\",\n            \"Description\": \"Sapiente quas suscipit qui quas mollitia recusandae dolores consectetur.\"\n        },\n        {\n            \"Movie_ID\": 6,\n            \"Title\": \"The King's Man\",\n            \"Genre\": \"Comedy\",\n            \"Description\": \"As a collection of history's worst tyrants and criminal masterminds gather to plot a war to wipe out millions, one man must race against time to stop them.\"\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -102,7 +120,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/timeslot?theater_name=ABC movies&time_start=2020-04-04 00:00:00&time_end=2020-04-05 00:00:00",
+					"raw": "http://127.0.0.1:8000/api/timeslot?theater_name=ABC movies&time_start=2020-05-23 00:00:00&time_end=2020-05-24 00:00:00",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -112,22 +130,23 @@
 					],
 					"port": "8000",
 					"path": [
+						"api",
 						"timeslot"
 					],
 					"query": [
 						{
 							"key": "theater_name",
 							"value": "ABC movies",
-							"description": "desired theater name to search for movie"
+							"description": "desired theater name to search for movie\n"
 						},
 						{
 							"key": "time_start",
-							"value": "2020-04-04 00:00:00",
-							"description": "datetime (yyyy-mm-dd hh:mm:ss) specifying the begining of the search window"
+							"value": "2020-05-23 00:00:00",
+							"description": "datetime (yyyy-mm-dd hh:mm:ss) specifying the begining of the search window\n"
 						},
 						{
 							"key": "time_end",
-							"value": "2020-04-05 00:00:00",
+							"value": "2020-05-24 00:00:00",
 							"description": "dateime (yyyy-mm-dd hh:mm:ss) specifying the end of the search window"
 						}
 					]
@@ -141,7 +160,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/timeslot?theater_name=ABC movies&time_start=2020-04-04 00:00:00&time_end=2020-04-05 00:00:00",
+							"raw": "http://127.0.0.1:8000/api/timeslot?theater_name=ABC movies&time_start=2020-05-23 00:00:00&time_end=2020-05-24 00:00:00",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -151,22 +170,23 @@
 							],
 							"port": "8000",
 							"path": [
+								"api",
 								"timeslot"
 							],
 							"query": [
 								{
 									"key": "theater_name",
 									"value": "ABC movies",
-									"description": "desired theater"
+									"description": "desired theater name to search for movie\n"
 								},
 								{
 									"key": "time_start",
-									"value": "2020-04-04 00:00:00",
-									"description": "datetime (yyyy-mm-dd hh:mm:ss) specifying the begining of the search window"
+									"value": "2020-05-23 00:00:00",
+									"description": "datetime (yyyy-mm-dd hh:mm:ss) specifying the begining of the search window\n"
 								},
 								{
 									"key": "time_end",
-									"value": "2020-04-05 00:00:00",
+									"value": "2020-05-24 00:00:00",
 									"description": "dateime (yyyy-mm-dd hh:mm:ss) specifying the end of the search window"
 								}
 							]
@@ -177,32 +197,48 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
-							"value": "Wed, 08 Apr 2020 02:12:12 GMT"
+							"key": "Host",
+							"value": "127.0.0.1:8000"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.7.7"
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:01:17 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:01:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
+							"key": "X-RateLimit-Limit",
+							"value": "60"
 						},
 						{
-							"key": "Content-Length",
-							"value": "1686"
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
 						},
 						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 1,\n            \"Title\": \"The Irishman\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T09:00:00\",\n            \"End_time\": \"2020-04-04T12:00:00\",\n            \"Description\": \"An aging hitman recalls his time with the mob and the intersecting events with his friend, Jimmy Hoffa, through the 1950-70s.\",\n            \"Theater_room_no\": 1\n        },\n        {\n            \"Movie_ID\": 2,\n            \"Title\": \"Parasite\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T10:00:00\",\n            \"End_time\": \"2020-04-04T13:00:00\",\n            \"Description\": \"A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks. But their easy life gets complicated when their deception is threatened with exposure.\",\n            \"Theater_room_no\": 2\n        },\n        {\n            \"Movie_ID\": 3,\n            \"Title\": \"The Favourite\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T11:00:00\",\n            \"End_time\": \"2020-04-04T14:00:00\",\n            \"Description\": \"In early 18th century England, a frail Queen Anne occupies the throne and her close friend, Lady Sarah, governs the country in her stead. When a new servant, Abigail, arrives, her charm endears her to Sarah.\",\n            \"Theater_room_no\": 3\n        },\n        {\n            \"Movie_ID\": 4,\n            \"Title\": \"The Farewell I\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T12:00:00\",\n            \"End_time\": \"2020-04-04T15:00:00\",\n            \"Description\": \"A Chinese family discovers their grandmother has only a short while left to live and decide to keep her in the dark, scheduling a wedding to gather before she dies.\",\n            \"Theater_room_no\": 4\n        },\n        {\n            \"Movie_ID\": 5,\n            \"Title\": \"Shoplifters\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T13:00:00\",\n            \"End_time\": \"2020-04-04T16:00:00\",\n            \"Description\": \"A family of small-time crooks take in a child they find outside in the cold.\",\n            \"Theater_room_no\": 5\n        }\n    ]\n}"
+					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 5,\n            \"Title\": \"Booksmart\",\n            \"Theater_name\": \"ABC Movies\",\n            \"Start_time\": \"2020-05-23 21:42:14\",\n            \"End_time\": \"2020-05-23 23:42:14\",\n            \"Description\": \"Sapiente quas suscipit qui quas mollitia recusandae dolores consectetur.\",\n            \"Theater_room_no\": \"10\"\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -212,7 +248,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/specific_movie_theater?theater_name=ABC movies&d_date=2020-04-04",
+					"raw": "http://127.0.0.1:8000/api/specific_movie_theater?theater_name=ABC%20movies&d_date=2018-03-22",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -222,17 +258,18 @@
 					],
 					"port": "8000",
 					"path": [
+						"api",
 						"specific_movie_theater"
 					],
 					"query": [
 						{
 							"key": "theater_name",
-							"value": "ABC movies",
+							"value": "ABC%20movies",
 							"description": "specifies desired theater to search movies for"
 						},
 						{
 							"key": "d_date",
-							"value": "2020-04-04",
+							"value": "2018-03-22",
 							"description": "specifies desired date to search movie for"
 						}
 					]
@@ -241,12 +278,12 @@
 			},
 			"response": [
 				{
-					"name": "Specif Movie Theater",
+					"name": "Specific Movie Theater",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/specific_movie_theater?theater_name=ABC movies&d_date=2020-04-04",
+							"raw": "http://127.0.0.1:8000/api/specific_movie_theater?theater_name=ABC%20movies&d_date=2018-03-22",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -256,17 +293,18 @@
 							],
 							"port": "8000",
 							"path": [
+								"api",
 								"specific_movie_theater"
 							],
 							"query": [
 								{
 									"key": "theater_name",
-									"value": "ABC movies",
+									"value": "ABC%20movies",
 									"description": "specifies desired theater to search movies for"
 								},
 								{
 									"key": "d_date",
-									"value": "2020-04-04",
+									"value": "2018-03-22",
 									"description": "specifies desired date to search movie for"
 								}
 							]
@@ -277,32 +315,48 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
-							"value": "Wed, 08 Apr 2020 02:15:01 GMT"
+							"key": "Host",
+							"value": "127.0.0.1:8000"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.7.7"
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:02:46 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:02:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
+							"key": "X-RateLimit-Limit",
+							"value": "60"
 						},
 						{
-							"key": "Content-Length",
-							"value": "1686"
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
 						},
 						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 1,\n            \"Title\": \"The Irishman\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T09:00:00\",\n            \"End_time\": \"2020-04-04T12:00:00\",\n            \"Description\": \"An aging hitman recalls his time with the mob and the intersecting events with his friend, Jimmy Hoffa, through the 1950-70s.\",\n            \"Theater_room_no\": 1\n        },\n        {\n            \"Movie_ID\": 2,\n            \"Title\": \"Parasite\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T10:00:00\",\n            \"End_time\": \"2020-04-04T13:00:00\",\n            \"Description\": \"A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks. But their easy life gets complicated when their deception is threatened with exposure.\",\n            \"Theater_room_no\": 2\n        },\n        {\n            \"Movie_ID\": 3,\n            \"Title\": \"The Favourite\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T11:00:00\",\n            \"End_time\": \"2020-04-04T14:00:00\",\n            \"Description\": \"In early 18th century England, a frail Queen Anne occupies the throne and her close friend, Lady Sarah, governs the country in her stead. When a new servant, Abigail, arrives, her charm endears her to Sarah.\",\n            \"Theater_room_no\": 3\n        },\n        {\n            \"Movie_ID\": 4,\n            \"Title\": \"The Farewell I\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T12:00:00\",\n            \"End_time\": \"2020-04-04T15:00:00\",\n            \"Description\": \"A Chinese family discovers their grandmother has only a short while left to live and decide to keep her in the dark, scheduling a wedding to gather before she dies.\",\n            \"Theater_room_no\": 4\n        },\n        {\n            \"Movie_ID\": 5,\n            \"Title\": \"Shoplifters\",\n            \"Theater_name\": \"abc movies\",\n            \"Start_time\": \"2020-04-04T13:00:00\",\n            \"End_time\": \"2020-04-04T16:00:00\",\n            \"Description\": \"A family of small-time crooks take in a child they find outside in the cold.\",\n            \"Theater_room_no\": 5\n        }\n    ]\n}"
+					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 3,\n            \"Title\": \"The Farewell I\",\n            \"Theater_name\": \"ABC Movies\",\n            \"Start_time\": \"2018-03-22 19:32:36\",\n            \"End_time\": \"2018-03-22 21:32:36\",\n            \"Description\": \"Id numquam nostrum minus non et.\",\n            \"Theater_room_no\": \"9\"\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -312,7 +366,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/search_performer?performer_name=Al Pacino",
+					"raw": "http://127.0.0.1:8000/api/search_performer?performer_name=Adam Turcotte\n",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -322,17 +376,18 @@
 					],
 					"port": "8000",
 					"path": [
+						"api",
 						"search_performer"
 					],
 					"query": [
 						{
 							"key": "performer_name",
-							"value": "Al Pacino",
+							"value": "Adam Turcotte\n",
 							"description": "Name of the performer the user wishes to search"
 						}
 					]
 				},
-				"description": "This endpoint can be used when a user wants to retrieve all movies a movie performer performs in.\n\nThe parameter 'performer_name' takes the name of the performer the user wishes to search as a parameter.\n\nFor example if performerName is “Al Pacino” all movies showing Al Pacino are retrieved."
+				"description": "This endpoint can be used when a user wants to retrieve all movies a movie performer performs in.\\\\n\\\\nThe parameter 'performer_name' takes the name of the performer the user wishes to search as a parameter.\\\\n\\\\nFor example if performerName is “Al Pacino” all movies showing Al Pacino are retrieved."
 			},
 			"response": [
 				{
@@ -341,7 +396,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/search_performer?performer_name=Al Pacino",
+							"raw": "http://127.0.0.1:8000/api/search_performer?performer_name=Adam Turcotte\n",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -351,12 +406,14 @@
 							],
 							"port": "8000",
 							"path": [
+								"api",
 								"search_performer"
 							],
 							"query": [
 								{
 									"key": "performer_name",
-									"value": "Al Pacino"
+									"value": "Adam Turcotte\n",
+									"description": "Name of the performer the user wishes to search"
 								}
 							]
 						}
@@ -366,32 +423,48 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
-							"value": "Sun, 12 Apr 2020 23:53:13 GMT"
+							"key": "Host",
+							"value": "127.0.0.1:8000"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.8.2"
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:05:40 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:05:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
+							"key": "X-RateLimit-Limit",
+							"value": "60"
 						},
 						{
-							"key": "Content-Length",
-							"value": "219"
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
 						},
 						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 1,\n            \"Overall_rating\": 7.9,\n            \"Title\": \"The Irishman\",\n            \"Description\": \"An aging hitman recalls his time with the mob and the intersecting events with his friend, Jimmy Hoffa, through the 1950-70s.\"\n        }\n    ]\n}"
+					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 1,\n            \"Overall_Rating\": \"5.7\",\n            \"Title\": \"Parasite\",\n            \"Description\": \"Molestiae ut quos voluptatum omnis corporis et.\"\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -405,7 +478,7 @@
 					"formdata": [
 						{
 							"key": "movie_title",
-							"value": "The Irishman",
+							"value": "Parasite",
 							"description": "Title of the movie being reviewed",
 							"type": "text"
 						},
@@ -430,7 +503,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/give_rating/",
+					"raw": "http://127.0.0.1:8000/api/give_rating/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -440,11 +513,12 @@
 					],
 					"port": "8000",
 					"path": [
+						"api",
 						"give_rating",
 						""
 					]
 				},
-				"description": "This endpoint can be used when a user wants to give a rating and/or review for a specific movie. \n\nThe parameter 'movie_title' specifies the user’s desired movie which they want to leave a rating/review for. The parameter 'username' takes the username of the user leaving the review. The parameter 'rating' is a numerical value ranging from 1-10. The parameter 'r_description' is for users to leave a description for their rating. \n\nFor example, if movie_title = “The Irishman” the user can leave a review for it. Error messages are returned if adding a review fails (i.e. Forgetting to leave a numerical rating). Success messages are given for users that successfully post a review."
+				"description": "This endpoint can be used when a user wants to give a rating and/or review for a specific movie. \\\\n\\\\nThe parameter 'movie_title' specifies the user’s desired movie which they want to leave a rating/review for. The parameter 'username' takes the username of the user leaving the review. The parameter 'rating' is a numerical value ranging from 1-10. The parameter 'r_description' is for users to leave a description for their rating. \\\\n\\\\nFor example, if movie_title = “The Irishman” the user can leave a review for it. Error messages are returned if adding a review fails (i.e. Forgetting to leave a numerical rating). Success messages are given for users that successfully post a review."
 			},
 			"response": [
 				{
@@ -457,28 +531,32 @@
 							"formdata": [
 								{
 									"key": "movie_title",
-									"value": "The Irishman",
+									"value": "Parasite",
+									"description": "Title of the movie being reviewed",
 									"type": "text"
 								},
 								{
 									"key": "username",
 									"value": "Ringo",
+									"description": "Username of the user creating the review",
 									"type": "text"
 								},
 								{
 									"key": "rating",
 									"value": "10",
+									"description": "Rating of the movie",
 									"type": "text"
 								},
 								{
 									"key": "r_description",
 									"value": "A masterpiece!",
+									"description": "Description of the rating",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/give_rating/",
+							"raw": "http://127.0.0.1:8000/api/give_rating/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -488,42 +566,59 @@
 							],
 							"port": "8000",
 							"path": [
+								"api",
 								"give_rating",
 								""
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
+					"status": "Created",
+					"code": 201,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
-							"value": "Sun, 12 Apr 2020 23:21:33 GMT"
+							"key": "Host",
+							"value": "127.0.0.1:8000"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.8.2"
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:05:54 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:05:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
+							"key": "X-RateLimit-Limit",
+							"value": "60"
 						},
 						{
-							"key": "Content-Length",
-							"value": "89"
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
 						},
 						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"message\": \"Successfully added review for the irishman by user: ringo\",\n    \"success\": true\n}"
+					"body": "{\n    \"message\": \"Successfully added review for Parasite by user: Ringo\",\n    \"success\": true\n}"
 				}
 			]
 		},
@@ -533,7 +628,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/new_movies/?r_date=2020-01-01",
+					"raw": "http://127.0.0.1:8000/api/new_movies?r_date=2021-01-01",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -543,18 +638,18 @@
 					],
 					"port": "8000",
 					"path": [
-						"new_movies",
-						""
+						"api",
+						"new_movies"
 					],
 					"query": [
 						{
 							"key": "r_date",
-							"value": "2020-01-01",
+							"value": "2021-01-01",
 							"description": "Movies will appear that were released before this date."
 						}
 					]
 				},
-				"description": "This endpoint can be used when a user wants to see the new movies that have recently come out. \n\nThe parameter 'r_date' specifies the date that the user would like to see which new movies have come out at that point in time. \nFor example, if r_date = 2020-01-01, then it will return a list of movies that have come out before that date, sorting by which movies are closest to the date."
+				"description": "This endpoint can be used when a user wants to see the new movies that have recently come out. \\n\\nThe parameter 'r_date' specifies the date that the user would like to see which new movies have come out at that point in time. \\nFor example, if r_date = 2020-01-01, then it will return a list of movies that have come out before that date, sorting by which movies are closest to the date."
 			},
 			"response": [
 				{
@@ -563,7 +658,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/new_movies/?r_date=2020-01-01",
+							"raw": "http://127.0.0.1:8000/api/new_movies?r_date=2021-01-01",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -573,13 +668,14 @@
 							],
 							"port": "8000",
 							"path": [
-								"new_movies",
-								""
+								"api",
+								"new_movies"
 							],
 							"query": [
 								{
 									"key": "r_date",
-									"value": "2020-01-01"
+									"value": "2021-01-01",
+									"description": "Movies will appear that were released before this date."
 								}
 							]
 						}
@@ -589,32 +685,48 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
-							"value": "Sun, 12 Apr 2020 23:51:07 GMT"
+							"key": "Host",
+							"value": "127.0.0.1:8000"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.8.2"
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:10:04 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:10:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
+							"key": "X-RateLimit-Limit",
+							"value": "60"
 						},
 						{
-							"key": "Content-Length",
-							"value": "2269"
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
 						},
 						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 11,\n            \"Overall_rating\": 8,\n            \"Title\": \"Marriage Story\",\n            \"Description\": \"Noah Baumbach's incisive and compassionate look at a marriage breaking up and a family staying together.\"\n        },\n        {\n            \"Movie_ID\": 6,\n            \"Overall_rating\": 7.9,\n            \"Title\": \" Little Women\",\n            \"Description\": \"Jo March (Saoirse Ronan) reflects back and forth on her life, telling the beloved story of the March sisters - four young women each determined to live life on her own terms.\"\n        },\n        {\n            \"Movie_ID\": 1,\n            \"Overall_rating\": 7.9,\n            \"Title\": \"The Irishman\",\n            \"Description\": \"An aging hitman recalls his time with the mob and the intersecting events with his friend, Jimmy Hoffa, through the 1950-70s.\"\n        },\n        {\n            \"Movie_ID\": 2,\n            \"Overall_rating\": 8.6,\n            \"Title\": \"Parasite\",\n            \"Description\": \"A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks. But their easy life gets complicated when their deception is threatened with exposure.\"\n        },\n        {\n            \"Movie_ID\": 4,\n            \"Overall_rating\": 7.6,\n            \"Title\": \"The Farewell I\",\n            \"Description\": \"A Chinese family discovers their grandmother has only a short while left to live and decide to keep her in the dark, scheduling a wedding to gather before she dies.\"\n        },\n        {\n            \"Movie_ID\": 12,\n            \"Overall_rating\": 7.2,\n            \"Title\": \"Booksmart\",\n            \"Description\": \"On the eve of their high school graduation, two academic superstars and best friends realize they should have worked less and played more. Determined not to fall short of their peers, the girls try to cram four years of fun into one night.\"\n        },\n        {\n            \"Movie_ID\": 7,\n            \"Overall_rating\": 8.4,\n            \"Title\": \"Avengers: Endgame\",\n            \"Description\": \"After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.\"\n        },\n        {\n            \"Movie_ID\": 3,\n            \"Overall_rating\": 7.6,\n            \"Title\": \"The Favourite\",\n            \"Description\": \"In early 18th century England, a frail Queen Anne occupies the throne and her close friend, Lady Sarah, governs the country in her stead. When a new servant, Abigail, arrives, her charm endears her to Sarah.\"\n        },\n        {\n            \"Movie_ID\": 5,\n            \"Overall_rating\": 8,\n            \"Title\": \"Shoplifters\",\n            \"Description\": \"A family of small-time crooks take in a child they find outside in the cold.\"\n        }\n    ]\n}"
+					"body": "{\n    \"data\": [\n        {\n            \"Movie_ID\": 6,\n            \"Overall_Rating\": 0,\n            \"Title\": \"The King's Man\",\n            \"Description\": \"As a collection of history's worst tyrants and criminal masterminds gather to plot a war to wipe out millions, one man must race against time to stop them.\"\n        },\n        {\n            \"Movie_ID\": 5,\n            \"Overall_Rating\": \"5.0\",\n            \"Title\": \"Booksmart\",\n            \"Description\": \"Sapiente quas suscipit qui quas mollitia recusandae dolores consectetur.\"\n        },\n        {\n            \"Movie_ID\": 4,\n            \"Overall_Rating\": \"5.2\",\n            \"Title\": \"Marriage Story\",\n            \"Description\": \"Omnis laudantium sed ut quaerat nulla quam nesciunt.\"\n        },\n        {\n            \"Movie_ID\": 3,\n            \"Overall_Rating\": \"4.2\",\n            \"Title\": \"The Farewell I\",\n            \"Description\": \"Id numquam nostrum minus non et.\"\n        },\n        {\n            \"Movie_ID\": 1,\n            \"Overall_Rating\": \"6.3\",\n            \"Title\": \"Parasite\",\n            \"Description\": \"Molestiae ut quos voluptatum omnis corporis et.\"\n        },\n        {\n            \"Movie_ID\": 2,\n            \"Overall_Rating\": \"4.5\",\n            \"Title\": \"The Favourite\",\n            \"Description\": \"Aut fugiat voluptas consequuntur magni aliquid.\"\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -707,7 +819,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/add_movie/",
+					"raw": "http://127.0.0.1:8000/api/add_movie/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -717,6 +829,7 @@
 					],
 					"port": "8000",
 					"path": [
+						"api",
 						"add_movie",
 						""
 					]
@@ -813,7 +926,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/add_movie/?title=The King's Man&release=2020-09-18&length=98&description=As a collection of history's worst tyrants and criminal masterminds gather to plot a war to wipe out millions, one man must race against time to stop them.&mpaa_rating=PG-13&genre=action&genre=adventure&genre=comedy&director=Matthew Vaughn&performer=Gemma Arterton&performer=Matthew Goode&performer=Ralph Fiennes&language=English",
+							"raw": "http://127.0.0.1:8000/api/add_movie/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -823,109 +936,59 @@
 							],
 							"port": "8000",
 							"path": [
+								"api",
 								"add_movie",
 								""
-							],
-							"query": [
-								{
-									"key": "title",
-									"value": "The King's Man",
-									"description": "Title of the movie that we are going to add"
-								},
-								{
-									"key": "release",
-									"value": "2020-09-18",
-									"description": "Release date of the movie that we are adding"
-								},
-								{
-									"key": "length",
-									"value": "98",
-									"description": "Length of the movie that we are adding (in minutes)"
-								},
-								{
-									"key": "description",
-									"value": "As a collection of history's worst tyrants and criminal masterminds gather to plot a war to wipe out millions, one man must race against time to stop them.",
-									"description": "Description of the movie that we are adding"
-								},
-								{
-									"key": "mpaa_rating",
-									"value": "PG-13",
-									"description": "MPAA rating of the movie that we are adding"
-								},
-								{
-									"key": "genre",
-									"value": "action",
-									"description": "First genre of the movie that we are adding"
-								},
-								{
-									"key": "genre",
-									"value": "adventure",
-									"description": "Second genre of the movie that we are adding"
-								},
-								{
-									"key": "genre",
-									"value": "comedy",
-									"description": "Third genre of the movie that we are adding"
-								},
-								{
-									"key": "director",
-									"value": "Matthew Vaughn",
-									"description": "Director name of the movie that we are adding"
-								},
-								{
-									"key": "performer",
-									"value": "Gemma Arterton",
-									"description": "Performer in the movie that we are adding"
-								},
-								{
-									"key": "performer",
-									"value": "Matthew Goode",
-									"description": "Performer in the movie that we are adding"
-								},
-								{
-									"key": "performer",
-									"value": "Ralph Fiennes",
-									"description": "Performer in the movie that we are adding"
-								},
-								{
-									"key": "language",
-									"value": "English",
-									"description": "Language of the movie that we are adding"
-								}
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
+					"status": "Created",
+					"code": 201,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Date",
-							"value": "Sun, 12 Apr 2020 21:46:59 GMT"
+							"key": "Host",
+							"value": "127.0.0.1:8000"
 						},
 						{
-							"key": "Server",
-							"value": "WSGIServer/0.2 CPython/3.7.5"
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:10:40 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Feb 2022 13:10:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
+							"key": "X-RateLimit-Limit",
+							"value": "60"
 						},
 						{
-							"key": "Content-Length",
-							"value": "88"
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
 						},
 						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"message\": \"Successfully added movie The King's Man with Movie_ID 15\",\n    \"success\": true\n}"
+					"body": "{\n    \"message\": \"Successfully added movie The King's Man with Movie_ID 7\",\n    \"success\": true\n}"
 				}
 			]
 		}
